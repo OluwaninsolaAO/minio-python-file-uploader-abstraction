@@ -1,0 +1,5 @@
+minio
+requests
+python-dotenv
+pillow
+datauri
