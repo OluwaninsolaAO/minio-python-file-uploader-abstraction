@@ -34,6 +34,12 @@ class Minio(FileUpload):
     ) -> Dict[str, str]:
         """Uploads file to MinIO"""
 
+        if not any([file_path, data]):
+            return {
+                'url': None,
+                'public_id': None
+            }
+
         if data is not None:
             public_id = public_id or ''.join(
                 choice(ascii_letters) for _ in range(20))
